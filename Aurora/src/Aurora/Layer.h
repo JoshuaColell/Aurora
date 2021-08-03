@@ -10,7 +10,7 @@ namespace Aurora {
 		Layer(const std::string& name = "Layer");
 		virtual ~Layer();
 
-		virtual void OnAttatch() {}
+		virtual void OnAttach() {}
 		virtual void OnDetatch() {}
 		virtual void OnUpdate() {}
 		virtual void OnEvent(Event& event) {}

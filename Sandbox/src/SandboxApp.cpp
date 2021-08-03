@@ -20,6 +20,7 @@ class Sandbox : public Aurora::Application {
 public:
 	Sandbox() {
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Aurora::ImGuiLayer());
 	}
 
 	~Sandbox() {

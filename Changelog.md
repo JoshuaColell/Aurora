@@ -20,7 +20,7 @@
 
 ---
 
-## v0.2.1 -> v0.3.0 - August 3rd, 2021
+## v0.2.1 -> v0.3.1 - August 3rd, 2021
 
 ---
 
@@ -29,13 +29,15 @@
 * Precompiled Headers
 * GLFW and our first Window! 🥳
 * Window Events
-* Layers
+* Layers and a Test Layer
 * Glad (OpenGL)
+* ImGui and made an ImGui Layer
 
 **Removed:**
 * Nothing
 
 **Updated:**
-* (Solution's) premake5.lua
+* (Main Projects's) premake5.lua
+* This file
 
 ---
