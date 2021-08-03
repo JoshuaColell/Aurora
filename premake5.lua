@@ -10,6 +10,13 @@ workspace "Aurora"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Aurora/vendor/GLFW/include"
+IncludeDir["Glad"] = "Aurora/vendor/Glad/include"
+
+include "Aurora/vendor/GLFW"
+include "Aurora/vendor/Glad"
+
 project "Aurora"
 	location "Aurora"
 	kind "SharedLib"
@@ -17,6 +24,9 @@ project "Aurora"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "aupch.h"
+	pchsource "Aurora/src/aupch.cpp"
 
 	files
 	{
@@ -26,18 +36,29 @@ project "Aurora"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
+		"Aurora/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
+	}
+
+	links
+	{
+		"GLFW",
+		"Glad",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines
 		{
 			"AU_PLATFORM_WINDOWS",
-			"AU_BUILD_DLL"
+			"AU_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -47,14 +68,17 @@ project "Aurora"
 
 	filter "configurations:Debug"
 		defines "AU_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "AU_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "AU_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -84,7 +108,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines
@@ -94,12 +118,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "AU_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "AU_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "AU_DIST"
+		buildoptions "/MD"
 		optimize "On"
