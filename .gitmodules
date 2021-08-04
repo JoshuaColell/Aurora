@@ -7,3 +7,6 @@
 [submodule "Aurora/vendor/imgui"]
 	path = Aurora/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "Aurora/vendor/glm"]
+	path = Aurora/vendor/glm
+	url = https://github.com/g-truc/glm

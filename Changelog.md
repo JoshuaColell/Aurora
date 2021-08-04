@@ -42,12 +42,16 @@
 
 ---
 
-## v0.3.1 -> v0.3.3 - August 4th, 2021
+## v0.3.1 -> v0.3.9 - August 4th, 2021
 
 ---
 
 **Added:**
-* Nothing
+* Some "Custom" stuff to the premake5.lua file
+* Input Pooling
+* Key and Mouse Codes (straight from GLFW ;D)
+* glm (math, yay)
+* ImGui Viewports and Docking
 
 **Removed:**
 * Nothing
