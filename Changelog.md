@@ -42,7 +42,7 @@
 
 ---
 
-## v0.3.1 -> v0.3.2 - August 4th, 2021
+## v0.3.1 -> v0.3.3 - August 4th, 2021
 
 ---
 
@@ -53,6 +53,6 @@
 * Nothing
 
 **Updated:**
-* (Main Projects's) premake5.lua so Sandbox is the starter project
+* (Main Projects's) premake5.lua so Sandbox is the starter project (x2)
 
 ---
