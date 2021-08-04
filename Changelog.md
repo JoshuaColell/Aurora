@@ -13,7 +13,7 @@
 * Premake and a bat file to help generate the project more easily
 
 **Removed:**
-* Deleted old License
+* Old License
 
 **Updated:**
 * Nothing
@@ -25,7 +25,7 @@
 ---
 
 **Added:**
-* The Event System
+* Event System
 * Precompiled Headers
 * GLFW and our first Window! 🥳
 * Window Events
@@ -38,6 +38,21 @@
 
 **Updated:**
 * (Main Projects's) premake5.lua
-* This file
+* This file (x2)
+
+---
+
+## v0.3.1 -> v0.3.2 - August 4th, 2021
+
+---
+
+**Added:**
+* Nothing
+
+**Removed:**
+* Nothing
+
+**Updated:**
+* (Main Projects's) premake5.lua so Sandbox is the starter project
 
 ---

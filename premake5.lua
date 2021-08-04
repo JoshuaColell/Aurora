@@ -15,6 +15,8 @@ IncludeDir["GLFW"] = "Aurora/vendor/GLFW/include"
 IncludeDir["Glad"] = "Aurora/vendor/Glad/include"
 IncludeDir["ImGui"] = "Aurora/vendor/imgui"
 
+startproject "Sandbox"
+
 include "Aurora/vendor/GLFW"
 include "Aurora/vendor/Glad"
 include "Aurora/vendor/imgui"
